@@ -1,0 +1,387 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+.container-fluid {
+    padding: 20px 0;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #f5efe5 !important;
+}
+
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: fixed;  /*absoulute*/
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 7rem;   /*60px*/
+	background-color: #1D2225;
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 14px;
+  color: #ede8e7;
+}
+
+.footer a {
+  color: #EFEBE6;
+}
+
+
+/*
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 11.5rem;
+  flex-direction: column;
+}*/
+/* CSS HEX color pallete-
+--alabaster: #f5efe5ff;
+--white: #ffffffff;
+--isabelline: #ede8e7ff;
+--dim-gray: #757272ff;
+--isabelline-2: #eeece7ff;
+--black: #000000ff;
+*/
+
+
+/*templates*/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Lato:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans|Unna:400,700&display=swap");
+
+
+body,
+p {
+  font-family: "Open Sans", sans-serif;
+  line-height: 26px;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  color: #666;
+  font-weight: 400;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: #1D2225;
+  font-weight: 600;
+  font-family: "Unna", serif;
+}
+
+h1,
+.h1 {
+  font-size: 38px;
+  line-height: 48px;
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 5rem 0 2rem 0;   /*top right bottom left*/
+}
+
+h4,
+.h4 {
+  line-height: 28px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+h5,
+.h5 {
+  font-size: 16px;
+  line-height: 26px;
+  margin: 3em 0 0.5em  0;
+
+}
+
+
+
+
+
+
+
+.font-extra {
+  font-family: "Lora", serif;
+}
+
+
+
+
+body {
+  background: #fff;
+  color: #575769;
+  
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  transition: all 0.3s ease-in-out;
+  color: #000;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #A8A093;
+}
+
+a.read-more {
+  margin-top: 10px;
+  display: inline-block;
+  color: #957D5F;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+a.read-more:hover {
+  color: #705E48;
+}
+
+.section-padding {
+  padding: 70px 0;
+  position: relative;
+}
+
+.section-sm {
+  padding: 30px 0;
+}
+
+a:focus {
+  outline: 0;
+}
+
+/* Input form */
+.form-control {
+  box-shadow: none;
+  border: 1px solid transparent;
+  padding: 12px 20px;
+  background: #f0f1f4;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #1D2225;
+}
+
+
+/* Button */
+.btn {
+  border-radius: 0px;
+  padding: 10px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  transition: 350ms;
+  letter-spacing: 1px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: #89796A;
+}
+
+.btn-primary:hover {
+  background: #5C5147;
+  color: #fff;
+  border-color: #3A332C;
+}
+
+.btn-dark {
+  background: #2D3439;
+  margin: 35px 0;
+}
+
+.btn-dark:hover,
+.btn-white.btn-primary:hover {
+  background: #1B1F22;
+  color: #fff;
+}
+
+
+
+
+.slick-slide {
+  outline: 0;
+}
+
+.letter-spacing {
+  letter-spacing: 3px;
+}
+
+.font-sm {
+  font-size: 12px !important;
+}
+
+.text-color {
+  color: #89796A;
+}
+
+.bg-grey {
+  background: #f8efea;
+}
+
+.gray-bg {
+  background: #f5f5f5;
+}
+
+.padding-bottom {
+  padding-bottom: 120px;
+}
+
+.padding-top {
+  padding-top: 120px;
+}
+
+
+
+.post-content-grid {
+  padding: 20px;
+}
+
+.post-content-grid p {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.post-title {
+  text-transform: capitalize;
+}
+
+.post-meta li {
+  text-transform: uppercase;
+  font-size: 12px;
+  position: relative;
+  padding: 0px 6px;
+}
+
+
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.post-grid span {
+  font-size: 15px;
+}
+
+
+
+.entry-content {
+  margin: 25px 0;
+}
+
+
+
+.follow-socials a {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  padding-top: 12px;
+  margin-bottom: 5px;
+  background: #eee;
+}
+
+.follow-socials a:hover {
+  background: #ce8460;
+  color: #fff;
+}
+
+.breadcrumb-wrapper {
+  margin-top: 3.5rem;
+}
+
+
+
+.image-row{
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.image{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+  .image {
+      height: 650px; /* Set a different height for larger screens */
+  }
+}
+
+.blog-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  margin: 1.5rem 0;
+}
+
+.blog-item:hover {
+  transform: scale(1.05);
+}
+
+.parg{
+  margin: 5rem 0 0 0;
+}
