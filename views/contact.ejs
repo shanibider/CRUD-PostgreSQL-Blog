@@ -1,5 +1,4 @@
 <%-include("partials/header")%>
-
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -32,10 +31,13 @@
 
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
-                        <p class="mt-5 mb-5">Something splashing about in the pool a little way off, and she swam
-                            nearer to make out what it was: at first she thought it must be a walrus or
-                            hippopotamus, but then she remembered how small she was now, and she soon made out that
-                            it was only a mouse that had slipped in like herself.</p>
+                        <p class="contact mt-5 mb-5 text-center">
+                            Welcome to my contact page! I'm thrilled to invite you to connect and explore exciting opportunities together.
+                            <br>Whether you're interested in collaboration, seeking my expertise for a web development project, or looking to make a website order, I'm here for you.
+                            <br>Feel free to reach out through the provided contact form with your ideas and requirements. We're open to partnerships, innovative projects, and any inquiries that can potentially bring value to both parties.
+                            <br>I look forward to hearing from you and exploring the possibilities of working together to create something extraordinary!
+
+                        </p>
 
                         <h2 class="mb-5">Get In Touch</h2>
 
@@ -56,9 +58,21 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="inquiryType ">Select Inquiry Type</label>
+                                        <select class="form-control form-control-lg" id="inquiry" name="inquiry" required style="height: fit-content;">
+                                        
+                                            <option value="" disabled selected>Select an Inquiry Type</option>
+                                          <option value="websiteOrder">Website Order</option>
+                                          <option value="collaboration">Collaboration</option>
+                                          <option value="webDevelopmentProject">My Expertise for a Web Development Project</option>
+                                          <option value="otherInquiries">Other Inquiries/ Suggestions</option>
+                                        </select>
+                                      </div>
+
+                                    <div class="form-group">
                                         <label for="message">Your Message</label>
                                         <textarea class="form-control form-control-message" name="message"
-                                            id="message" rows="5" required></textarea>
+                                            id="message" rows="7" required></textarea>
                                     </div>
 
                                     <button class="btn btn-primary solid blank mt-3" type="submit" >Send Message </button>
@@ -70,13 +84,9 @@
                 </div>
 
 
-
-
-            </div>
         </div>
     </div>
 </section>
-
 
 <!-- SweetAlert script for success -->
 <script>
@@ -95,5 +105,4 @@
     });
 
 </script>
-
 <%-include("partials/footer")%>

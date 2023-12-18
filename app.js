@@ -125,6 +125,7 @@ app.post("/contact", function (req, res) {
   // Extract form data
   const name = req.body.name;
   const email = req.body.email;
+  const inquiry = req.body.inquiry;
   const message = req.body.message;
 
   // Nodemailer configuration
@@ -136,12 +137,19 @@ app.post("/contact", function (req, res) {
     },
   });
 
+  // Function to format camel case words with spaces
+function formatInquiry(inquiry) {
+  return inquiry.replace(/([a-z])([A-Z])/g, '$1 $2');
+}
+
   // Email options
   const mailOptions = {
     from: email,
-    to: "shanibider@gmail.com", 
+    to: "shanibider@gmail.com",
     subject: `New Message from ${name}`,
-    text: `${message} \n\n Email sent from: ${email}`,  };
+    text: `Inquiry: ${formatInquiry(inquiry)} \n\n\n ${message} \n\n Email sent from: ${email}`,
+  };
+
 
   // Send the email
   transporter.sendMail(mailOptions, function (error, info) {
