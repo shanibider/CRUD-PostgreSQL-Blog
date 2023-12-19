@@ -17,6 +17,24 @@ Explore the repository to delve into the development of this blog, featuring a b
 <br>
 
 
+## Running locally
+
+Install the required node.js modules:
+
+```shell
+npm i
+```
+
+Run the server:
+
+```shell
+node app.js
+```
+
+Your server is now running on: [http://localhost:3000](http://localhost:3000)
+
+<br>
+
 ### Website Preview:
 
 ![1](https://github.com/shanibider/EJS-Blog-Website/assets/72359805/b855389c-a370-45d0-b7b0-d36415afd0bf)
