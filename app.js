@@ -168,9 +168,10 @@ function formatInquiry(inquiry) {
   });
 });
 
-
-
-
-app.listen(port, () => {
+// Test it locally and also deploy it to Heroku.
+// proccess.env.PORT- for Heroku
+app.listen(proccess.env.PORT || port, () => {
   console.log(`Server started on port ${port}`);
 });
+
+exports.built = series(scssTask, jsTask);
