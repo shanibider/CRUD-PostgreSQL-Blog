@@ -6,6 +6,7 @@ import _ from "lodash";
 import nodemailer from "nodemailer";
 import path from "path";
 import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
+import serverless from 'serverless-http';
 
 
 const homeStartingContent = "Hi Everyone.";
@@ -168,10 +169,24 @@ function formatInquiry(inquiry) {
   });
 });
 
-// Test it locally and also deploy it to Heroku.
-// proccess.env.PORT- for Heroku
-app.listen(proccess.env.PORT || port, () => {
+
+app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
 
-exports.built = series(scssTask, jsTask);
+
+
+
+
+
+// Export the app object. This is required for the serverless function.
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.json({ message: 'Hello from Express.js!' });
+}
+);
+app.use('/.netlify/functions/app', router);  // path must route to lambda
+
+export const handler = serverless(app);
+
