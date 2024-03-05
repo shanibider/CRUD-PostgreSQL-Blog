@@ -1,39 +1,37 @@
-#  EJS Blog Website
-This repository houses the code for my blog website project.
-The frontend is built with EJS for dynamic and efficient rendering, while the backend is powered by JavaScript.
-The project incorporates HTML for structure, CSS for styling, and Bootstrap for responsive design.
-Explore the repository to delve into the development of this blog, featuring a blend of technologies for a seamless user experience.
+# Node.js Blog Web Application 📝
 
-## Key Features:
+Welcome to the Node.js Blog Web Application! This project utilizes Node.js, Express.js, and EJS to create a dynamic and responsive blog platform. Users can create, view, update, and delete posts, providing a seamless blogging experience.
 
-- [ ] Built using EJS for dynamic and efficient rendering.
-- [ ] Backend developed in JavaScript including Express server and routes.
-- [ ] HTML for structure, CSS for styling, and Bootstrap for responsive design.
+## Key Features 🚀
+- [x] **Post Creation**: Users can easily create new posts using a simple and intuitive interface.
+- [x] **Post Viewing**: The home page displays all posts, allowing users to view their content at a glance.
+- [x] **Post Update/Delete**: Users have the flexibility to edit or delete their posts as needed, ensuring content accuracy and relevance.
+- [x] **Responsive Styling**: The application is styled to be responsive across various devices, providing a consistent and enjoyable user experience.
 
+## Technologies Used 💻
+[![My Skills](https://skillicons.dev/icons?i=js,nodejs,express,react,html,css,bootstrap)](https://skillicons.dev)
 
-### built using:
-[![My Skills](https://skillicons.dev/icons?i=js,react,html,css,bootstrap)](https://skillicons.dev)
+- [x] **Node.js**: A JavaScript runtime environment that executes server-side code, enabling the development of scalable and high-performance applications.
+- [x] **Express.js**: A minimalist web application framework for Node.js, providing a robust set of features for building web servers and APIs.
+- [x] **EJS (Embedded JavaScript)**: A simple templating language that generates HTML markup with plain JavaScript, facilitating the creation of dynamic web pages.
 
-<br>
+## Installation Guide 🛠️
 
+1. Clone the repository.
+3. Install dependencies: `npm install`
+5. Start the server: `node app.js`
+6. Access the application in your web browser at `http://localhost:3000`
 
-## Running locally
+## Usage 📝
 
-Install the required node.js modules:
+1. **Create a Post**: Click on the "Create Post" button to compose a new blog post, filling in the title and content fields.
+2. **View Posts**: Browse the home page to see a list of all available posts, including titles and excerpts.
+3. **Update/Delete Posts**: Click on a post to view its full content. From there, you can edit or delete the post using the provided options.
+4. **Responsive Design**: Experience seamless navigation and readability across devices, thanks to the responsive styling of the application.
 
-```shell
-npm i
-```
-
-Run the server:
-
-```shell
-node app.js
-```
-
-Your server is now running on: [http://localhost:3000](http://localhost:3000)
 
 <br>
+
 
 ### Website Preview:
 
@@ -44,19 +42,22 @@ Your server is now running on: [http://localhost:3000](http://localhost:3000)
 ![4](https://github.com/shanibider/EJS-Blog-Website/assets/72359805/545ed88b-0f9a-42e1-b1a0-15143cea69c4)
 ![6](https://github.com/shanibider/EJS-Blog-Website/assets/72359805/4b429ccb-e906-47a9-923a-28d2fbce3903)
 
-
-
 <br>
+
 
 ## 🔗 Connect with me 👩‍💻😊
-[![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shanibider)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shani-bider-0848b8177/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shani-bider/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://shanibider.github.io/Portfolio/)
+[![gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shanibider@gmail.com)
 
-
-<br>
 
 <footer>
 <p style="float:left; width: 20%;">
-Copyright © Shani Bider, 2023
+Copyright © Shani Bider, 2024
 </p>
 </footer>
+
+
+## License📄
+
+This project is licensed under the MIT License.
