@@ -52,11 +52,18 @@ let posts = [
 // defining the necessary routes:
 
 // the client ask for a reaource- the homepage.
-app.get("/", function(req, res){
+app.get("/", async function(req, res){
+  try {
+  const result = await db.query("SELECT * FROM items ORDER BY id ASC");
+  items = result.rows;
+
   res.render("home", {
     startingContent: homeStartingContent, 
     posts: posts, // Pass the posts array to home.ejs
     });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // GET ABOUT:
