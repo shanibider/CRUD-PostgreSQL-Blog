@@ -7,6 +7,7 @@ import nodemailer from "nodemailer";
 import path from "path";
 import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 import serverless from 'serverless-http';
+import pg from "pg";
 
 
 const homeStartingContent = "Hi Everyone.";
