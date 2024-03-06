@@ -55,7 +55,7 @@ let posts = [
 app.get("/", async function(req, res){
   try {
   const result = await db.query("SELECT * FROM posts ORDER BY id ASC");
-  items = result.rows;
+  posts = result.rows;
 
   res.render("home", {
     startingContent: homeStartingContent, 
