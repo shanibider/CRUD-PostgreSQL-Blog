@@ -46,9 +46,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 let posts = [
-  { id: 1, title: "Fitness", description: "This is a post about fitness."},
-  { id: 2, title: "Wellness", description: "This is a post about wellness."},
-];
+  { id: 1, subject: "Fitness", title: "How to get fit", content: "Eat healthy and exercise" }];
 
 
 // defining the necessary routes:
