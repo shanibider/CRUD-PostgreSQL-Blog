@@ -77,19 +77,29 @@ app.get("/contact", function(req, res){
 });
 
 
-// GET and POST compose:
-app.get("/compose", function(req, res){
+
+// GET and POST compose (put togheter):
+app.get("/compose", async function(req, res){
   res.render("compose");
 });
-// post viewing feature- displaying all the posts on the home page
-app.post("/compose", function(req, res){
+app.post("/compose", async function(req, res){
+  try {
+    await db.query("INSERT INTO posts (subject, title, content) VALUES ($1, $2, $3)", [req.body.postSubject, req.body.postTitle, req.body.postBody]);
     const post = {subject:req.body.postSubject, title: req.body.postTitle, content: req.body.postBody};
-  posts.push(post);   //pushing the post into the posts array
-  res.redirect("/");
+    posts.push(post);   
+    res.redirect("/");
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 
-// displaying a single post when the user clicks on Read More. find a post with a title matching the requested post name and then renders a template with that post (post.ejs).
+
+
+
+
+// displaying a single post when user clicks on Read More.
+// find a post with a title matching the requested post name and then renders a template with that post (post.ejs).
 // defining a route using app.get for handling GET requests to the path "/posts/:postName", The ":postName" part in the route is a route parameter, and it allows you to capture the value specified in the URL.
 app.get("/posts/:postName", function(req, res){
   const requestedTitle = _.lowerCase(req.params.postName);
@@ -141,6 +151,9 @@ app.get("/delete/:postName", function (req, res) {
 
   res.redirect("/");
 });
+
+
+
 
 
 
