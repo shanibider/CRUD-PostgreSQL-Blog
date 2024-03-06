@@ -8,7 +8,7 @@ import path from "path";
 import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 import serverless from 'serverless-http';
 import pg from "pg";
-
+import dotenv from 'dotenv';
 
 const homeStartingContent = "Hi Everyone.";
 const aboutTitle = "About Me"; 
@@ -23,6 +23,8 @@ Setting up the Express.js server and defining the necessary routes.
 // Express.js server:
 const app = express();
 const port = process.env.PORT || 3000; // Use the PORT provided by the environment or default to 3000
+
+dotenv.config();
 
 app.set('view engine', 'ejs');
 
@@ -43,7 +45,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Server static files
 app.use(express.static("public"));
 
-let posts = [];
+let posts = [
+  { id: 1, title: "Fitness", description: "This is a post about fitness."},
+  { id: 2, title: "Wellness", description: "This is a post about wellness."},
+];
 
 
 // defining the necessary routes:
