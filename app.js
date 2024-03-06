@@ -21,9 +21,21 @@ Setting up the Express.js server and defining the necessary routes.
 
 // Express.js server:
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the PORT provided by the environment or default to 3000
 
 app.set('view engine', 'ejs');
+
+
+const db = new pg.Client({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+});
+db.connect();
+
+
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
