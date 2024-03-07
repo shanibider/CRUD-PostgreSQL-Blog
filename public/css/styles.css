@@ -4,7 +4,7 @@ html {
 }
 
 .container-fluid {
-    padding: 20px 0;
+    padding: 0px 0;
 }
 .navbar {
     padding-top: 15px;
@@ -144,15 +144,9 @@ h5,
 }
 
 
-
-
-
-
-
 .font-extra {
   font-family: "Lora", serif;
 }
-
 
 
 
@@ -297,6 +291,7 @@ a:focus {
 
 
 
+
 .post-content-grid {
   padding: 20px;
 }
@@ -328,9 +323,9 @@ a:focus {
 }
 
 
-
+/* single post */
 .entry-content {
-  margin: 25px 0;
+  margin: 45px 0 65px 0;
 }
 
 
@@ -380,7 +375,7 @@ a:focus {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s;
-  margin: 1.5rem 0;
+  margin: 3.5rem 0;
 }
 
 .blog-item:hover {
@@ -395,5 +390,4 @@ a:focus {
   margin: 1.5rem 0;
   padding-bottom: 30px;
 }
-
 

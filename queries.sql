@@ -1,7 +1,7 @@
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
-  subject VARCHAR(100) NOT NULL,
-  title VARCHAR(100) NOT NULL,
+  subject VARCHAR(200) NOT NULL,
+  title VARCHAR(300) NOT NULL,
   content VARCHAR(1000) NOT NULL
 );
 

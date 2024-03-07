@@ -9,6 +9,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 import serverless from 'serverless-http';
 import pg from "pg";
 import dotenv from 'dotenv';
+import multer from "multer";
 
 const homeStartingContent = "Hi Everyone.";
 const aboutTitle = "About Me"; 
@@ -75,6 +76,12 @@ app.get("/about", function(req, res){
 app.get("/contact", function(req, res){
   res.render("contact", {contactTitle: contactTitle, notification: notification});  // render the contact page and pass the contactContent variable to it 
 });
+
+
+
+
+// Multer configuration for handling file uploads
+const upload = multer({ dest: 'uploads/' }); // Set the destination folder where uploaded files will be stored
 
 
 
