@@ -1,6 +1,13 @@
 <script src="node_modules/lodash/lodash.min.js"></script>
 <%- include("partials/header"); -%>
 
+<!-- 
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+-->
+
 <body>
   <section class="single-block-wrapper section-padding">
       <div class="container">
@@ -31,6 +38,7 @@
                           <a href="/delete/<%= (title) %>">
                             <!-- Delete button linking to the delete route -->
                           <button class="btn btn-primary" type="button" name="button" onclick="confirmDelete()">Delete</button>
+
 
                           <!-- Add this script to handle the custom delete confirmation -->
                           <script>

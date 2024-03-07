@@ -97,10 +97,8 @@ app.post("/compose", async function(req, res){
 
 
 
-
-// displaying a single post when user clicks on Read More.
-// find a post with a title matching the requested post name and then renders a template with that post (post.ejs).
-// defining a route using app.get for handling GET requests to the path "/posts/:postName", The ":postName" part in the route is a route parameter, and it allows you to capture the value specified in the URL.
+// When a user clicks on a post, the app should display the post's subject, title, and content on a new page (post.ejs).
+//  The ":postName" part in the route is a route parameter, and it allows to capture the value specified in the URL.
 app.get("/posts/:postName", function(req, res){
   const requestedTitle = _.lowerCase(req.params.postName);
 
@@ -114,45 +112,94 @@ app.get("/posts/:postName", function(req, res){
 
 
 
-// Edit post route - display the form to edit the post
+
+// GET route to render the edit form for a specific post
+app.get("/edit/:postName", async function (req, res) {
+  try {
+    const requestedTitle = req.params.postName;
+
+    // Fetch the post from the database based on the post name
+    const result = await db.query("SELECT * FROM posts WHERE title = $1", [requestedTitle]);
+    const post = result.rows[0]; // Get the first row from the results
+
+    if (!post) {
+      // If no post is found with the given title, render an error page or redirect
+      return res.status(404).send("Post not found");
+    }
+
+    // Render the edit form with the fetched post data
+    res.render("edit", { post: post });
+  } catch (err) {
+    console.error("Error fetching post for edit:", err);
+    res.status(500).send("Error fetching post for edit");
+  }
+});
+
+// POST route to handle updating a post in the database
+app.post("/edit/:postName", async function (req, res) {
+  try {
+    const requestedTitle = req.params.postName;
+
+    // Update the post in the database based on the post name
+    await db.query("UPDATE posts SET subject = $1, title = $2, content = $3 WHERE title = $4", [req.body.postSubject, req.body.postTitle, req.body.postBody, requestedTitle]);
+
+    // Redirect to the post detail page after successful update
+    res.redirect("/posts/" + _.lowerCase(req.body.postTitle));
+  } catch (err) {
+    console.error("Error updating post:", err);
+    res.status(500).send("Error updating post");
+  }
+});
+
+
+/* 
+// Edit without database
 app.get("/edit/:postName", function (req, res) {
   const requestedTitle = _.lowerCase(req.params.postName);
-
   posts.forEach(function (post) {
-    const storedTitle = _.lowerCase(post.title);
+    const storedTitle = _.lowerCase(post.title);  // converts the post's title to lowercase for each post
+    // If current post title matches the requested title, it renders the "edit" view, passing the post data to it.
     if (storedTitle === requestedTitle) {
-      res.render("edit", { post: post });
-    }
+      res.render("edit", { post: post });}
   });
 });
 
-// Update post route - handle the form submission to update the post
+// Edit post route - handle the form submission to update the post (when 'update' is clicked)
 app.post("/edit/:postName", function (req, res) {
   const requestedTitle = _.lowerCase(req.params.postName);
 
-  posts.forEach(function (post, index) {
+  posts.forEach (function (post, index) {
     const storedTitle = _.lowerCase(post.title);
+    // If current post title matches the requested title, it updates the corresponding post in the posts array with the data received from the form (req.body). Then redirects the user to the URL for viewing the updated post.
     if (storedTitle === requestedTitle) {
-      // Update the post with the new data
-      posts[index] = { subject: req.body.postSubject, title: req.body.postTitle, content: req.body.postBody };
-      res.redirect("/posts/" + _.lowerCase(req.body.postTitle));    //redirect to the post page
+      posts [index] = { subject: req.body.postSubject, title: req.body.postTitle, content: req.body.postBody };
+      res.redirect("/posts/" + _.lowerCase(req.body.postTitle));    
     }
   });
-});
+});*/
+
+
+
+
+
 
 // Delete post route - handle post deletion
-app.get("/delete/:postName", function (req, res) {
+app.get("/delete/:postName", async function (req, res) {
   const requestedTitle = _.lowerCase(req.params.postName);
 
-  // Filter out the post to be deleted
-  posts = posts.filter(function (post) {
-    return _.lowerCase(post.title) !== requestedTitle;    //return all the posts that don't match the requested title
-  });
-
-  res.redirect("/");
+  try {
+    await db.query("DELETE FROM posts WHERE title = $1", [requestedTitle]);
+    res.redirect("/");
+  } catch (err) {
+    console.log(err);
+  }
 });
 
-
+  /*posts = posts.filter(function (post) {  // Filter out the post to be deleted
+    return _.lowerCase(post.title) !== requestedTitle;    //return all the posts that don't match the requested title
+  });
+  res.redirect("/");
+});*/
 
 
 
@@ -206,11 +253,11 @@ function formatInquiry(inquiry) {
 });
 
 
+
+
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
-
-
 
 
 

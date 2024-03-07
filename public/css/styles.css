@@ -19,11 +19,16 @@ html {
     color: #f5efe5 !important;
 }
 
+
+
 .footer-padding {
 	padding-bottom: 60px;
 }
-
 .footer {
+  display: flex;
+  align-items: center; /* Vertically center align items */
+  justify-content: center; /* Horizontally center align items */
+
 	position: fixed;  /*absoulute*/
 	text-align: center;
 	bottom: 0;
@@ -31,18 +36,18 @@ html {
 	height: 7rem;   /*60px*/
 	background-color: #1D2225;
 }
-
 .footer p {
 	margin-top: 25px;
 	font-size: 14px;
   color: #ede8e7;
-}
+      
+  margin-right: 10px; /* Add some space between text and icons */
 
+}
 .footer a {
   color: #EFEBE6;
 }
-
-
+  
 /*
 footer {
   position: fixed;
