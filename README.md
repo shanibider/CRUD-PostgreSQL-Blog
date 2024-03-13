@@ -1,6 +1,12 @@
-# Node.js Blog Web Application 📝
+# CRUD Blog Web Application, with PostgreSQL, Express, Node.js, and EJS Templating 📝
 
-Welcome to the Node.js Blog Web Application! This project utilizes Node.js, Express.js, and EJS to create a dynamic and responsive blog platform. Users can create, view, update, and delete posts, providing a seamless blogging experience.
+<div align="center">
+<img height="350px" src="https://github.com/shanibider/CRUD-PostgreSQL-Blog-Web-Application/assets/72359805/4037be89-97ce-4733-bcb4-aea030a99404">
+</div>
+
+### **Live Demo:** [Explore the live website.🖥](https://nodejs-blog-web-application.onrender.com/)
+
+Welcome to the CRUD Blog Application! This project utilizes Node.js, Express.js, PostgreSQL, and EJS templating to create a dynamic and responsive CRUD (Create, Read, Update, Delete) application. Users can perform CRUD operations on posts, providing a seamless blogging experience.
 
 ## Key Features 🚀
 - [x] **Post Creation**: Users can easily create new posts using a simple and intuitive interface.
@@ -9,10 +15,11 @@ Welcome to the Node.js Blog Web Application! This project utilizes Node.js, Expr
 - [x] **Responsive Styling**: The application is styled to be responsive across various devices, providing a consistent and enjoyable user experience.
 
 ## Technologies Used 💻
-[![My Skills](https://skillicons.dev/icons?i=js,nodejs,express,react,html,css,bootstrap)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,nodejs,express,html,css,bootstrap)](https://skillicons.dev)
 
 - [x] **Node.js**: A JavaScript runtime environment that executes server-side code, enabling the development of scalable and high-performance applications.
 - [x] **Express.js**: A minimalist web application framework for Node.js, providing a robust set of features for building web servers and APIs.
+- [x] **PostgreSQL**: A powerful, open-source relational database system used for storing and managing data.
 - [x] **EJS (Embedded JavaScript)**: A simple templating language that generates HTML markup with plain JavaScript, facilitating the creation of dynamic web pages.
 
 ## Installation Guide 🛠️
